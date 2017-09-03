@@ -8,17 +8,8 @@ var HIT_DELAY = 2000;//Amount of time required to complete hit animation, before
 console.log("File is loaded.");
 //var ship = document.getElementById("imperialNavDestroyer");
 //ship.setAttribute("style", "position:fixed; top:80%; left:20px; width: 360px;");
-var ship = $("#imperialNavDestroyer");
-ship.css({"position":"fixed", "top":"79%", "left":"20px", "width": "360px", "z-index": "200"});
-
-var annoying = $("#markerCursor");
-annoying.css({"position":"fixed", "top":"49%", "left":"40px", "width": "260px", "z-index": "300"});
-
-
-function hit(link, hitLocation) {
-  sound_hit.play();
-  setTimeout(function(){window.location.href=link}, HIT_DELAY);
-}
+var ship = $("#imperialNavDestroyer2");
+ship.css({"position":"fixed", "top":"82%", "left":"30px", "width": "320px", "z-index": "200"});
 
 
 $(document).mousemove(function(e){
@@ -31,21 +22,27 @@ $(document).mousemove(function(e){
   ////var ship_y = shipoffset.top;
   ////ship_center_x = ship_x + 180;
   ////ship_center_y = ship_y + 101;
-  /*
-  */
-  var top_shipOffset = 111;
-  var left_shipOffset = 110;
+  //320x124
+  var top_shipOffset = 90;
+  var left_shipOffset = 80;
   var ship_center_x = ship.offset().left+ship.width()/2;
   var ship_center_y = ship.offset().top+ship.height()/2;
+  //shipCenter = [ship.offset().left+ship.width()/2, ship.offset().top+ship.height()/2];
+  shipCenter = [ship.offset().left+80, ship.offset().top+80];
 
   //Calculate angle for ship to be pointed
-  var angle = Math.atan2(e.pageX- ship_center_x,- (e.pageY- ship_center_y) )*(180/Math.PI);
-  angle -= 64;
+  //var angle = Math.atan2(e.pageX- ship_center_x,- (e.pageY- ship_center_y) )*(180/Math.PI);
+  var angle = Math.atan2(e.pageX- shipCenter[0],- (e.pageY- shipCenter[1]) )*(180/Math.PI);
+  angle -= 93;
   ship.css({ "-webkit-transform": 'rotate(' + angle + 'deg)'});    
   ship.css({ '-moz-transform': 'rotate(' + angle + 'deg)'});
   ship.css({ 'transform': 'rotate(' + angle + 'deg)'});
-  ship.css({ 'transform-origin': left_shipOffset + top_shipOffset});
-  ship.css({ '-ms-transform-origin': left_shipOffset + top_shipOffset});
+  ship.css({ 'transform-origin': "80px 80px"});
+  ship.css({ '-ms-transform-origin': "80px 80px"});
+
+
+
+
   //ship.css({ 'transform-origin': left_shipOffset + top_shipOffset});
   //ship.css({ '-ms-transform-origin': left_shipOffset + top_shipOffset});
   /*
