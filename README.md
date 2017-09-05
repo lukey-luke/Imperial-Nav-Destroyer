@@ -1,5 +1,5 @@
 # Imperial Nav Destroyer
-![alt text](https://im.ezgif.com/tmp/ezgif-1-ae981aab23.gif)
+![Gif](img/imperial-nav-destroyer.gif)
 
 ## What is this?
 - This is a tool I created in my freetime to overlay the [Imperial Star Destroyer](http://starwars.wikia.com/wiki/Imperial_I-class_Star_Destroyer) on top of a webpage. For fun.
