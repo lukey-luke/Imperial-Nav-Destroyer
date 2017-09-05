@@ -1,6 +1,4 @@
 # Imperial Nav Destroyer
-## Because we're tired of all these old-looking websites.
-
 ![alt text](https://im.ezgif.com/tmp/ezgif-1-ae981aab23.gif)
 
 ## What is this?
