@@ -1,0 +1,38 @@
+{
+ "manifest_version": 2,
+  "name": "Imperial Nav Destroyer",
+  "version": "1.1",
+
+  "description": "We're getting really tired of the same old websites...",
+  "icons": { "64": "icon64.png"},
+
+  "browser_action": {
+    "default_icon" : {
+      "64": "icon64.png"
+    },
+    "default_title": "Imperial Nav Destroyer"
+  },
+
+  "author": "Luke Short",
+  "background": {
+    "persistent": false,
+    "page": "background/background.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["background/jquery-3.2.1.min.js", "content/drawShip.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": ["img/Star_Destroyer_Render.png", "img/explosion.gif", "img/laserbeam.png", "audio/explosion-3.wav"],
+  "commands": {
+    "toggle-ship": {
+      "suggested_key": { "default": "Alt+I" },
+      "description": "Toggle ship"
+    }
+  },
+  "permissions": [
+    "storage"
+  ]
+}
